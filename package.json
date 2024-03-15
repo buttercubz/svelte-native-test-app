@@ -7,6 +7,7 @@
     "dev": "vite --host",
     "build": "vite build",
     "sync": "npx cap sync",
+    "build:sync": "pnpm run build && pnpm run sync",
     "open:xcode": "npx cap open ios",
     "open:android-studio": "npx cap open android",
     "start:ios": "npx cap run ios",
@@ -30,15 +31,19 @@
     "@capacitor/android": "^5.7.0",
     "@capacitor/camera": "^5.0.9",
     "@capacitor/core": "^5.7.0",
+    "@capacitor/device": "^5.0.7",
     "@capacitor/ios": "^5.7.0",
     "@capacitor/splash-screen": "^5.0.7",
     "@ionic/pwa-elements": "^3.2.2",
+    "bits-ui": "^0.19.5",
     "clsx": "^2.1.0",
     "konsta": "^3.1.2",
+    "lucide-svelte": "^0.354.0",
     "mode-watcher": "^0.2.1",
     "svelte-radix": "^1.0.3",
     "svelte-routing": "^2.12.0",
     "tailwind-merge": "^2.2.1",
-    "tailwind-variants": "^0.2.0"
+    "tailwind-variants": "^0.2.0",
+    "vaul-svelte": "^0.2.4"
   }
 }
