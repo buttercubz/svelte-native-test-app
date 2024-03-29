@@ -8,6 +8,10 @@
   import { App } from "konsta/svelte";
   import { onMount } from "svelte";
 
+  import "swiper/css/navigation";
+  import "swiper/css/pagination";
+  import "swiper/css";
+
   let theme: "material" | "ios" = "material";
 
   const platforms = {
@@ -34,7 +38,6 @@
     </Route>
 
     <Route path="/login">
-      <!-- <Home {theme} on:theme={({ detail }) => (theme = detail)} /> -->
       <Login />
     </Route>
 

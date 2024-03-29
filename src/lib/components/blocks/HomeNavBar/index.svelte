@@ -20,7 +20,9 @@
 
   let isSearch = false;
 
-  const dispatch = createEventDispatcher<{ open: "menu" }>();
+  const dispatch = createEventDispatcher<{ open: "menu", search: boolean }>();
+
+  $: dispatch("search", isSearch)
 
   const takePicture = async () => {
     const image = await Camera.getPhoto({
@@ -50,7 +52,7 @@
     />
   </Navbar>
 
-  <div class="ios:-mt-9 material:-mt-7">
+  <div class="ios:-mt-9 material:-mt-7 sticky mt-16">
     <Block strongIos outlineIos>
       <Chip class="m-0.5 space-x-1">
         <MessageSquareMore size={16} />
@@ -90,7 +92,7 @@
   <Navbar {title} large={theme === "ios"}>
     <div
       slot="right"
-      class="flex flex-row ios:space-x-3 absolute ios:left-[19rem] material:left-[19rem]"
+      class="ios:space-x-5 ios:absolute ios:flex ios:flex-row ios:justify-between ios-align"
     >
       <Link navbar onClick={takePicture}>
         <CameraIcon />
@@ -104,3 +106,9 @@
     </div>
   </Navbar>
 {/if}
+
+<style>
+  :global(.k-ios .ios-align) {
+    left: calc(100dvw - 9rem);
+  }
+</style>
